@@ -5,7 +5,7 @@ echo $view->header()->setAttribute('template', $T('DiagToolsNsLookup_header'));
 echo $view->textInput('Host');
 
 echo $view->buttonList()
-    ->insert($view->button('Run', $view::BUTTON_SUBMIT))
+    ->insert($view->button('Run', $view::BUTTON_SUBMIT));
 //    ->insert($view->button('Help', $view::BUTTON_HELP));
 
 echo "<pre class='DiagTools_NsLookup'>";
