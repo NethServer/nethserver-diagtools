@@ -2,7 +2,7 @@
 /* @var $view Nethgui\Renderer\Xhtml */
 echo $view->header()->setAttribute('template', $T('DiagToolsPingHost_header'));
 
-echo $view->textInput('Host');
+echo $view->textInput('Host')->setAttribute('placeholder', 'nethserver.org');
 
 echo $view->buttonList()
     ->insert($view->button('Run', $view::BUTTON_SUBMIT));
