@@ -21,7 +21,7 @@ class  NsLookup extends \Nethgui\Controller\AbstractController
             $host = $this->parameters['Host'];
         }
 
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/nslookup ' . $host)->getOutput();
+        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/nslookup -timeout=4 ' . $host)->getOutput();
     }
 
     public function initialize()
