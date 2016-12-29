@@ -2,9 +2,6 @@
 
 use esmith::Build::CreateLinks qw(:all);
 
-# actions to do
 my $event = 'nethserver-diagtools-update';
-event_actions($event,
-             'initialize-default-databases' => '00');
 #templates to do
 templates2events('/etc/sudoers', $event);

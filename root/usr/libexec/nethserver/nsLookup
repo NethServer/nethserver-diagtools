@@ -1,3 +1,0 @@
-#!/bin/bash
-HOST=$(/usr/sbin/e-smith/db configuration getprop diagtools nsLookup)
-/usr/bin/nslookup $HOST

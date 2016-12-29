@@ -29,11 +29,6 @@ rm -rf $RPM_BUILD_ROOT
 (cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
 
 %{genfilelist} %{buildroot} \
-  --file /usr/libexec/nethserver/ipAddr 'attr(0755,root,root)' \
-  --file /usr/libexec/nethserver/ipRoute 'attr(0755,root,root)' \
-  --file /usr/libexec/nethserver/pingHost 'attr(0755,root,root)' \
-  --file /usr/libexec/nethserver/nsLookup 'attr(0755,root,root)' \
-  --file /usr/libexec/nethserver/traceRoute 'attr(0755,root,root)' \
 $RPM_BUILD_ROOT > e-smith-%{version}-filelist
 
 %clean
