@@ -13,7 +13,6 @@ echo "</pre>";
 
 $view->includeCss('
     pre.DiagTools_IpRoute {
-        border: 2px solid #aaa;
         padding: 10px;
     }
 ');
