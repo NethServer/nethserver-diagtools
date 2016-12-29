@@ -17,5 +17,6 @@ $view->includeCss('
     pre.DiagTools_TraceRoute {
         border: 2px solid #aaa;
         padding: 10px;
+        width: 750px;
     }
 ');
