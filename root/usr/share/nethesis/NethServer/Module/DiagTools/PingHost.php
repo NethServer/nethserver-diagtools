@@ -15,7 +15,7 @@ class  PingHost extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/ping ' $this->parameters['Host'])->getOutput();
+        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/ping -c4 ' . $this->parameters['Host'])->getOutput();
     }
 
     public function initialize()
