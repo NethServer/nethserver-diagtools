@@ -15,12 +15,18 @@ class  TraceRoute extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/traceroute -I ' . $this->parameters['Host'])->getOutput();
+        if ($this->parameters['Host'] === '') {
+            $host = 'nethserver.org';
+        } else {
+            $host = $this->parameters['Host'];
+        }
+
+        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/traceroute -I ' . $host)->getOutput();
     }
 
     public function initialize()
     {
-        $this->declareParameter('Host', Validate::HOSTADDRESS, array('configuration', 'diagtools', 'traceRoute'));
+        $this->declareParameter('Host', Validate::EVERYTHING);
         parent::initialize();
     }
 

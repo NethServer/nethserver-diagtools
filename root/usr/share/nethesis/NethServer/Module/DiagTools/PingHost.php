@@ -15,12 +15,18 @@ class  PingHost extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/ping -c4 ' . $this->parameters['Host'])->getOutput();
+        if ($this->parameters['Host'] === '') {
+            $host = 'nethserver.org';
+        } else {
+            $host = $this->parameters['Host'];
+        }
+
+        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/ping -c4 ' . $host)->getOutput();
     }
 
     public function initialize()
     {
-        $this->declareParameter('Host', Validate::HOSTADDRESS, array('configuration', 'diagtools', 'pingHost'));
+        $this->declareParameter('Host', Validate::EVERYTHING);
         parent::initialize();
     }
 
