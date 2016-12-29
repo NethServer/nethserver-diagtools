@@ -1,5 +1,5 @@
 Summary: NethServer diagnostic tools
-%define name nethserver-diagtool
+%define name nethserver-diagtools
 %define version 0.0.1
 %define release 1
 Name: %{name}
@@ -47,4 +47,3 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Wed Nov 23 2016 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.1-1-ns7
 - First release
-
