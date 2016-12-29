@@ -15,12 +15,12 @@ class  NsLookup extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/libexec/nethserver/nsLookup')->getOutput();
+        return $this->getPlatform()->exec('/usr/bin/sudo usr/bin/nslookup ' . $this->parameters['Host'])->getOutput();
     }
 
     public function initialize()
     {
-        $this->declareParameter('Host', Validate::HOSTNAME, array('configuration', 'diagtools', 'nsLookup'));
+        $this->declareParameter('Host', Validate::HOSTADDRESS, array('configuration', 'diagtools', 'nsLookup'));
         parent::initialize();
     }
 
@@ -38,10 +38,4 @@ class  NsLookup extends \Nethgui\Controller\AbstractController
         }
         $view['report'] = $this->report;
     }
-
-    public function onParametersSaved($changes)
-    {
-        $this->getPlatform()->signalEvent('nethserver-diagtools-update@post-process');
-    }
-
 }

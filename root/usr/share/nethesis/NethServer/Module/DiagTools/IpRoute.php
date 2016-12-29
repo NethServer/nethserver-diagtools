@@ -15,7 +15,7 @@ class  IpRoute extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/libexec/nethserver/ipRoute')->getOutput();
+        return $this->getPlatform()->exec('/usr/bin/sudo /usr/sbin/ip route')->getOutput();
     }
 
     public function bind(\Nethgui\Controller\RequestInterface $request)

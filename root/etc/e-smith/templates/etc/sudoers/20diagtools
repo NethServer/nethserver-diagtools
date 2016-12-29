@@ -3,11 +3,10 @@
     # 20fail2ban
     #
     push @cmnd_alias_httpd_admin, qw(
-        /usr/libexec/nethserver/nsLookup
-        /usr/libexec/nethserver/traceRoute
-        /usr/libexec/nethserver/pingHost
-        /usr/libexec/nethserver/ipRoute
-        /usr/libexec/nethserver/ipAddr
+    /usr/sbin/ip
+    /usr/bin/nslookup
+    /usr/bin/ping
+    /usr/bin/traceroute
     );
     '';
 }
