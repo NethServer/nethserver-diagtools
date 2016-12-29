@@ -26,7 +26,7 @@ class  NsLookup extends \Nethgui\Controller\AbstractController
 
     public function initialize()
     {
-        $this->declareParameter('Host', Validate::EVERYTHING);
+        $this->declareParameter('Host', Validate::ANYTHING);
         parent::initialize();
     }
 
