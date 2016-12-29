@@ -1,0 +1,3 @@
+#!/bin/bash
+HOST=$(/usr/sbin/e-smith/db configuration getprop diagtools traceRoute)
+/usr/bin/traceroute $HOST
