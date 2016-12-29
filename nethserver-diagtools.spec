@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.1
+%define version 0.0.2
 %define release 1
 Name: %{name}
 Version: %{version}
