@@ -15,3 +15,5 @@ $L['TraceRoute_Title'] = 'Traceroute';
 $L['DiagToolsTraceRoute_header'] = 'Print the route packets trace to network host.';
 $L['TraceRoute_label'] = 'Traceroute';
 $L['Host_label'] = 'Hostname or IP';
+$L['ExternalIP_Title'] = 'External Public IP';
+$L['DiagToolsExternalIP_header'] = 'Your public IP address';
