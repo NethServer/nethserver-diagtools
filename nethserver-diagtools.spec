@@ -40,5 +40,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
-* Wed Nov 23 2016 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.1-1-ns7
-- First release
+* Fri Dec 30 2016 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.2-1-ns7
+- First release to NS7
