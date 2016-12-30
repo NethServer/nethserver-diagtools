@@ -1,6 +1,6 @@
 <?php
 /* @var $view Nethgui\Renderer\Xhtml */
-echo $view->header()->setAttribute('template', $T('DiagToolsIpAdd_header'));
+echo $view->header()->setAttribute('template', $T('DiagToolsExternalIP_header'));
 
 //echo $view->buttonList()
 //    ->insert($view->button('Run', $view::BUTTON_SUBMIT));
@@ -12,9 +12,12 @@ echo "</pre>";
 
 
 $view->includeCss('
-    pre.DiagTools_ExternalIP {
-        border: 2px solid #aaa;
-        padding: 10px;
-        width: 750px;
+pre.DiagTools_ExternalIP {
+    border: 2px solid #aaa;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    font-size: 15px;
+    color: red;
     }
 ');
