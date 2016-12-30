@@ -26,7 +26,10 @@ class  PingHost extends \Nethgui\Controller\AbstractController
 
     public function initialize()
     {
-        $this->declareParameter('Host', Validate::ANYTHING);
+        $vh = $this->createValidator()->orValidator($this->createValidator(Validate::HOSTADDRESS),
+            $this->createValidator(\Nethgui\System\PlatformInterface::EMPTYSTRING));
+
+        $this->declareParameter('Host', $vh);
         parent::initialize();
     }
 
