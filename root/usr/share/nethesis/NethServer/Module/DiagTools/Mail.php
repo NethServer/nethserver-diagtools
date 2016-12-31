@@ -7,7 +7,7 @@ use Nethgui\System\PlatformInterface as Validate;
 * Implement gui module for diagnostic tools
  */
 
-class  SendMail extends \Nethgui\Controller\AbstractController
+class  Mail extends \Nethgui\Controller\AbstractController
 {
 
     private $report;
