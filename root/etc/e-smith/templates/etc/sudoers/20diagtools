@@ -8,6 +8,8 @@
     /usr/bin/ping
     /usr/bin/traceroute
     /usr/bin/dig
+    /usr/sbin/sendmail
+    /usr/bin/echo
     );
     '';
 }
