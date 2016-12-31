@@ -2,6 +2,8 @@
 /* @var $view Nethgui\Renderer\Xhtml */
 echo $view->header()->setAttribute('template', $T('DiagToolsSendMail_header'));
 
+echo->$view->textLabel('MailDeliverySystem')->setAttribute('template', $T('MailDeliverySystem_label'));
+
 echo $view->textInput('User')->setAttribute('placeholder', 'root');
 
 echo $view->buttonList()

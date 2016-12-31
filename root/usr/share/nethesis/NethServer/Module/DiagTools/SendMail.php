@@ -30,8 +30,7 @@ class  SendMail extends \Nethgui\Controller\AbstractController
     public function initialize()
     {
         $vu = $this->createValidator()->orValidator($this->createValidator(Validate::EMAIL),
-                $this->createValidator()->memberOf('root'),
-                $this->createValidator(\Nethgui\System\PlatformInterface::EMPTYSTRING));
+                $this->createValidator()->memberOf('root',''));
         $this->declareParameter('User', $vu);
         parent::initialize();
     }
