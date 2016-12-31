@@ -23,12 +23,12 @@ class  SendMail extends \Nethgui\Controller\AbstractController
         } else {
             $user = $this->parameters['User'];
         }
-        return $this->getPlatform()->exec('/usr/bin/sudo echo "Subject: test email from '.$sn.'.'$d'" | /usr/lib/sendmail -v ' . $user)->getOutput();
+        return $this->getPlatform()->exec('/usr/bin/sudo echo "Subject: test email from '.$sn.'.'.$d.'" | /usr/lib/sendmail -v ' . $user)->getOutput();
     }
 
     public function initialize()
     {
-        $vu = $this->createValidator()->orValidator($this->createValidator(Validate::MAIL),
+        $vu = $this->createValidator()->orValidator($this->createValidator(Validate::EMAIL),
                 $this->createValidator(\Nethgui\System\PlatformInterface::EMPTYSTRING));
         $this->declareParameter('User', $vu);
         parent::initialize();
