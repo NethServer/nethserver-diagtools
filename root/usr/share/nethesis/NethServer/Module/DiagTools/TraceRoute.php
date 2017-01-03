@@ -21,7 +21,7 @@ class  TraceRoute extends \Nethgui\Controller\AbstractController
             $host = $this->parameters['Host'];
         }
 
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/traceroute -I --wait=3 ' . $host)->getOutput();
+        if isset($host) {return $this->getPlatform()->exec("/usr/bin/sudo /usr/bin/traceroute -I -n --wait=3 $host 2>&1)->getOutput();
     }
 
     public function initialize()

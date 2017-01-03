@@ -21,7 +21,9 @@ class  PingHost extends \Nethgui\Controller\AbstractController
             $host = $this->parameters['Host'];
         }
 
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/ping -c4 -W3 ' . $host)->getOutput();
+        if isset($host) {
+            return $this->getPlatform()->exec("/usr/bin/sudo /usr/bin/ping -c4 -W3 $host 2>&1")->getOutput();
+        }
     }
 
     public function initialize()
