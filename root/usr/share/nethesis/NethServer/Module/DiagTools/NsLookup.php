@@ -20,8 +20,9 @@ class  NsLookup extends \Nethgui\Controller\AbstractController
         } else {
             $host = $this->parameters['Host'];
         }
-
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/bin/nslookup -timeout=4 ' . $host . ' 2>&1')->getOutput();
+        if (isset($host)) {
+            return $this->getPlatform()->exec("/usr/bin/sudo /usr/bin/nslookup $host 2>&1")->getOutput();
+        }
     }
 
     public function initialize()
