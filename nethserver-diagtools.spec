@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.3
+%define version 0.0.4
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -40,5 +40,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue Jan 3 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.4-1-ns7
+- Mail tab, Internet IP tab, stderr is displayed in tab (NSlookup,Ping,Traceroute)
+
 * Fri Dec 30 2016 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.3-1-ns7
 - First release to NS7
