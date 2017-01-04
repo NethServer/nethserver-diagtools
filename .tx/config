@@ -1,0 +1,6 @@
+[nethserver.DiagTools]
+source_file = root/usr/share/nethesis/NethServer/Language/en/NethServer_Module_DiagTools.php
+source_lang = en
+type = PHP_ALT_ARRAY
+
+
