@@ -15,7 +15,7 @@ class  IpAddr extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo /usr/sbin/ip addr')->getOutput();
+        return $this->getPlatform()->exec('/usr/sbin/ip addr')->getOutput();
     }
 
     public function bind(\Nethgui\Controller\RequestInterface $request)

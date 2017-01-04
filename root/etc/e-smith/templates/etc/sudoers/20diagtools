@@ -3,13 +3,7 @@
     # 20fail2ban
     #
     push @cmnd_alias_httpd_admin, qw(
-    /usr/sbin/ip
-    /usr/bin/nslookup
-    /usr/bin/ping
     /usr/bin/traceroute
-    /usr/bin/dig
-    /usr/sbin/sendmail
-    /usr/bin/echo
     );
     '';
 }

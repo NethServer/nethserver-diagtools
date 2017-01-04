@@ -22,7 +22,7 @@ class  PingHost extends \Nethgui\Controller\AbstractController
         }
 
         if (isset($host)) {
-            return $this->getPlatform()->exec("/usr/bin/sudo /usr/bin/ping -c4 $host 2>&1")->getOutput();
+            return $this->getPlatform()->exec("/usr/bin/ping -c4 $host 2>&1")->getOutput();
         }
     }
 

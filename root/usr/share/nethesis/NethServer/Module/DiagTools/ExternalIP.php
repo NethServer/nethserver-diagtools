@@ -15,7 +15,7 @@ class  ExternalIP extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        return $this->getPlatform()->exec('/usr/bin/sudo dig +short myip.opendns.com @resolver1.opendns.com')->getOutput();
+        return $this->getPlatform()->exec('dig +short myip.opendns.com @resolver1.opendns.com')->getOutput();
     }
 
     public function bind(\Nethgui\Controller\RequestInterface $request)

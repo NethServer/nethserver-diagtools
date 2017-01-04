@@ -21,7 +21,7 @@ class  NsLookup extends \Nethgui\Controller\AbstractController
             $host = $this->parameters['Host'];
         }
         if (isset($host)) {
-            return $this->getPlatform()->exec("/usr/bin/sudo /usr/bin/nslookup $host 2>&1")->getOutput();
+            return $this->getPlatform()->exec("/usr/bin/nslookup $host 2>&1")->getOutput();
         }
     }
 

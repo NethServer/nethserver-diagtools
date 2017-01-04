@@ -23,7 +23,7 @@ class  Mail extends \Nethgui\Controller\AbstractController
         } else {
             $user = $this->parameters['User'];
         }
-        return $this->getPlatform()->exec('/usr/bin/sudo echo "Subject: test email from '.$sn.'.'.$d
+        return $this->getPlatform()->exec('echo "Subject: test email from '.$sn.'.'.$d
             . '" | /usr/lib/sendmail -f root -v ' . $user)->getOutput();
     }
 
