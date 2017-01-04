@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.4
+%define version 0.0.5
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Jan 4 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.5-1-ns7
+- sudo removed, except for traceroute
+
 * Tue Jan 3 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.4-1-ns7
 - Mail tab, Internet IP tab, stderr is displayed in tab (NSlookup,Ping,Traceroute)
 
