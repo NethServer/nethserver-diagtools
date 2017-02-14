@@ -22,3 +22,7 @@ $L['DiagToolsSendMail_header'] = 'Send a test email';
 $L['MailDeliverySystem_label'] = 'The Mail Delivery Status Reports are delivered to root, use the webmail to read them';
 $L['User_label'] = 'Mailbox to test';
 $L['SendMail_label'] = 'Sendmail';
+$L['ScanHosts_Title'] = 'Scan';
+$L['DiagToolsScanHost_header'] = 'Scan your local networks';
+$L['nic_label'] = 'Green Interfaces';
+$L['ScanHost_label'] = 'Scan';
