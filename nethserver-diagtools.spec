@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.5
+%define version 0.0.6
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -10,6 +10,7 @@ Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
 URL: http://dev.nethserver.org/projects/nethforge/wiki/%{name}
 BuildRequires: nethserver-devtools
+Requires: arp-scan
 #AutoReq: no
 
 %description
@@ -40,6 +41,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Tue Feb 14 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.6-1-ns7
+- arp-scan used to scan green interfaces
+
 * Wed Jan 4 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.5-1-ns7
 - sudo removed, except for traceroute
 
