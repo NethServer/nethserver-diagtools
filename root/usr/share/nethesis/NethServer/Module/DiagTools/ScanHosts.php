@@ -31,12 +31,16 @@ class  ScanHosts extends \Nethgui\Controller\AbstractController
         $nic = array();
         foreach ($this->getPlatform()->getDatabase('networks')->getAll() as $key => $values) {
             if (isset($values['role']) && $values['role'] == 'green') {
+                #we can retrieve a value of a property instead of a key name
+                # $ips[] = $values['ipaddr'];
+                $nic[] = $key;
+           }
+            elseif (isset($values['role']) && $values['role'] == 'blue') {
                 $nic[] = $key;
            }
         }
         return $nic;
     }
-
 
     public function initialize()
     {

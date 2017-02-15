@@ -24,5 +24,5 @@ $L['User_label'] = 'Mailbox to test';
 $L['SendMail_label'] = 'Sendmail';
 $L['ScanHosts_Title'] = 'Scan';
 $L['DiagToolsScanHost_header'] = 'Scan your local networks';
-$L['nic_label'] = 'Green Interfaces';
+$L['nic_label'] = 'Network Interfaces';
 $L['ScanHost_label'] = 'Scan';

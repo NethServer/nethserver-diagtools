@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.6
+%define version 0.0.7
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -30,6 +30,7 @@ rm -rf $RPM_BUILD_ROOT
 (cd root   ; find . -depth -print | cpio -dump $RPM_BUILD_ROOT)
 
 %{genfilelist} %{buildroot} \
+  --file /etc/cron.monthly/UpdateArpScanVendors 'attr(0750,root,root)' \
 $RPM_BUILD_ROOT > e-smith-%{version}-filelist
 
 %clean
@@ -41,6 +42,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Feb 15 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.7-1-ns7
+- arp-scan used to scan blue interfaces
+- update vendors monthly
+
 * Tue Feb 14 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.6-1-ns7
 - arp-scan used to scan green interfaces
 
