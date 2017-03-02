@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.7
+%define version 0.0.8
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -37,11 +37,14 @@ $RPM_BUILD_ROOT > e-smith-%{version}-filelist
 rm -rf $RPM_BUILD_ROOT
 
 %files -f e-smith-%{version}-filelist
+%doc COPYING
 %defattr(-,root,root)
-
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Mar 02 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.8-1-ns7
+- Added copyright and GPLV3 License.
+
 * Wed Feb 15 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.7-1-ns7
 - arp-scan used to scan blue interfaces
 - update vendors monthly
