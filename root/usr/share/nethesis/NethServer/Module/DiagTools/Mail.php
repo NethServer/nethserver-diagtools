@@ -50,18 +50,13 @@ class  Mail extends \Nethgui\Controller\AbstractController
         parent::initialize();
     }
 
-    public function bind(\Nethgui\Controller\RequestInterface $request)
-    {
-        parent::bind($request);
-        $this->report = $this->getReport();
-    }
-
     public function prepareView(\Nethgui\View\ViewInterface $view)
     {
         parent::prepareView($view);
-        if (!$this->report) {
-            $this->report = $this->getReport();
+        if ($this->getRequest()->isMutation()) {
+            $view['report'] = $this->getReport();
+        } else {
+            $view['report'] = '';
         }
-        $view['report'] = $this->report;
     }
 }
