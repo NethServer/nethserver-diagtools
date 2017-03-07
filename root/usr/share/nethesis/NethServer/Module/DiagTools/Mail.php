@@ -39,7 +39,7 @@ class  Mail extends \Nethgui\Controller\AbstractController
         } else {
             $user = $this->parameters['User'];
         }
-        return $this->getPlatform()->exec('/usr/lib/sendmail -f root -bv ' . $user)->getOutput();
+        return $this->getPlatform()->exec(sprintf('/usr/lib/sendmail -f root -bv %s 2>&1', \escapeshellarg($user)))->getOutput();
     }
 
     public function initialize()
