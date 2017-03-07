@@ -34,16 +34,12 @@ class  Mail extends \Nethgui\Controller\AbstractController
 
     private function getReport()
     {
-        $d = $this->getPlatform()->getDatabase('configuration')->getType('DomainName');
-        $sn = $this->getPlatform()->getDatabase('configuration')->getType('SystemName');
-
         if ($this->parameters['User'] === '') {
             $user = 'root';
         } else {
             $user = $this->parameters['User'];
         }
-        return $this->getPlatform()->exec('echo "Subject: test email from '.$sn.'.'.$d
-            . '" | /usr/lib/sendmail -f root -v ' . $user)->getOutput();
+        return $this->getPlatform()->exec(sprintf('/usr/lib/sendmail -f root -bv %s 2>&1', \escapeshellarg($user)))->getOutput();
     }
 
     public function initialize()
@@ -54,18 +50,13 @@ class  Mail extends \Nethgui\Controller\AbstractController
         parent::initialize();
     }
 
-    public function bind(\Nethgui\Controller\RequestInterface $request)
-    {
-        parent::bind($request);
-        $this->report = $this->getReport();
-    }
-
     public function prepareView(\Nethgui\View\ViewInterface $view)
     {
         parent::prepareView($view);
-        if (!$this->report) {
-            $this->report = $this->getReport();
+        if ($this->getRequest()->isMutation()) {
+            $view['report'] = $this->getReport();
+        } else {
+            $view['report'] = '';
         }
-        $view['report'] = $this->report;
     }
 }

@@ -35,7 +35,7 @@ class  ScanHosts extends \Nethgui\Controller\AbstractController
     {
         $nic = $this->parameters['nic'];
         if (isset($nic)) {
-            return $this->getPlatform()->exec("sudo /usr/sbin/arp-scan -I $nic -l")->getOutput();
+            return $this->getPlatform()->exec(sprintf('/usr/bin/sudo /usr/sbin/arp-scan -I %s -l 2>&1', \escapeshellarg($nic)))->getOutput();
         }
     }
 
