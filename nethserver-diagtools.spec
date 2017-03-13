@@ -5,7 +5,7 @@ Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
 BuildArch: noarch
-URL: http://dev.nethserver.org/projects/nethforge/wiki/%{name}
+URL: %{url_prefix}/%{name}
 BuildRequires: nethserver-devtools
 Requires: arp-scan
 Requires: speedtest-cli
