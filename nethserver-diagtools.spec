@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.8
+%define version 0.0.9
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -11,6 +11,7 @@ BuildArch: noarch
 URL: http://dev.nethserver.org/projects/nethforge/wiki/%{name}
 BuildRequires: nethserver-devtools
 Requires: arp-scan
+Requires: speedtest-cli
 #AutoReq: no
 
 %description
@@ -42,6 +43,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Oct 04 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.9-1-ns7
+- Added speedtest-cli
+
 * Thu Mar 02 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.8-1-ns7
 - Added copyright and GPLV3 License.
 

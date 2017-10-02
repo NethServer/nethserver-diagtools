@@ -5,6 +5,7 @@
     push @cmnd_alias_httpd_admin, qw(
     /usr/bin/traceroute
     /usr/sbin/arp-scan
+    /usr/bin/speedtest-cli
     );
     '';
 }
