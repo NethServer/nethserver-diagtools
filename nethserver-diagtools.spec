@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 %define name nethserver-diagtools
-%define version 0.0.9
+%define version 0.0.10
 %define release 1
 Name: %{name}
 Version: %{version}
@@ -43,6 +43,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Sat Oct 07 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.10-1-ns7
+- Added the translation of the Server ID field
+
 * Wed Oct 04 2017 Stephane de Labrusse <stephdl@de-labrusse.fr> - 0.0.9-1-ns7
 - Added speedtest-cli
 
