@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 Name: nethserver-diagtools
-Version: 1.0.0
+Version: 1.0.1
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Mon Oct 23 2017 Davide Principi <davide.principi@nethesis.it> - 1.0.1-1
+- Translation of the Server ID -- stephdl/nethserver-diagtools#1
+
 * Fri Oct 06 2017 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.0-1
 - Add speedtest
 - First release for NS 7.4
