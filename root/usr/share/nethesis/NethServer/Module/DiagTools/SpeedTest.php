@@ -56,16 +56,34 @@ class  SpeedTest extends \Nethgui\Controller\AbstractController
 
         $nic = array();
         foreach ($this->getPlatform()->getDatabase('networks')->getAll() as $key => $values) {
-            if (isset($values['role']) && $values['role'] == 'red' && isset($values['ipaddr'])) {
-                $nicRed[] = $key;
-                $redcount++;
+            if (isset($values['role']) && $values['role'] == 'red' 
+                && isset($values['ipaddr']) 
+                && isset($values['bootproto']) && $values['bootproto'] === 'none') {
+                    $nicRed[] = $key;
+                    $redcount++;
            }
-            elseif (isset($values['role']) && $values['role'] == 'green' && isset($values['ipaddr'])) {
-               $nicGreen[] = $key;
+            elseif (isset($values['role']) && $values['role'] == 'green' 
+                && isset($values['ipaddr']) 
+                && isset($values['bootproto']) && $values['bootproto'] === 'none') {
+                    $nicGreen[] = $key;
+                    $greencount++;
            }
         }
-        if ( $redcount >= '1') { $nic = $nicRed;}
-        elseif ( ! isset($redcount)) { $nic = $nicGreen;}
+
+        #If you find one red, use it
+        if ( $redcount >= '1') {
+            $nic = $nicRed;
+        }
+
+        # No red, use green
+        elseif ( ! isset($redcount) && isset($greencount) ) {
+            $nic = $nicGreen;
+        }
+        # we have no static IP nowhere, return NULL
+        # speedtest-cli will try to find itself its source IP
+        else {
+            $nic = NULL;
+        }
 
         return $nic;
     }
