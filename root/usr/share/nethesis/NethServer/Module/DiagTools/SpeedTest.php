@@ -82,7 +82,7 @@ class  SpeedTest extends \Nethgui\Controller\AbstractController
         # we have no static IP nowhere, return NULL
         # speedtest-cli will try to find itself its source IP
         else {
-            $nic = NULL;
+            $nic = array('AUTO_FIND_NIC');
         }
 
         return $nic;
