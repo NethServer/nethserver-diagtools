@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 Name: nethserver-diagtools
-Version: 1.0.1
+Version: 1.0.2
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -40,6 +40,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed May 30 2018 Stephane de Labrusse <stephdl@de-labrusse.fr> - 1.0.2-1
+- Automated RPM builds - NethServer/dev#5393 
+- Speedtest: Usage of bad IP - Bug NethServer/dev#5510
+
 * Mon Oct 23 2017 Davide Principi <davide.principi@nethesis.it> - 1.0.1-1
 - Translation of the Server ID -- stephdl/nethserver-diagtools#1
 
