@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+
 cd /usr/share/arp-scan/
-get-oui -v 
-get-iab -v
+get-oui
+get-iab
