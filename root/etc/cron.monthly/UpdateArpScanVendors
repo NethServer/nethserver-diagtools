@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
 cd /usr/share/arp-scan/
-get-oui
-get-iab
+/usr/sbin/get-oui -u http://standards-oui.ieee.org/oui/oui.txt
+/usr/sbin/get-iab -u http://standards-oui.ieee.org/iab/iab.txt
