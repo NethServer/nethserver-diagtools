@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 Name: nethserver-diagtools
-Version: 1.0.2
+Version: 1.0.3
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Thu Nov 08 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.3-1
+- Quiet the get-oui and get-iab cron job - NethServer/dev#5617
+
 * Wed May 30 2018 Stephane de Labrusse <stephdl@de-labrusse.fr> - 1.0.2-1
 - Automated RPM builds - NethServer/dev#5393 
 - Speedtest: Usage of bad IP - Bug NethServer/dev#5510
