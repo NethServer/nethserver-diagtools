@@ -1,6 +1,6 @@
 Summary: NethServer diagnostic tools
 Name: nethserver-diagtools
-Version: 1.0.3
+Version: 1.0.4
 Release: 1%{?dist}
 License: GPL
 Source: %{name}-%{version}.tar.gz
@@ -40,6 +40,9 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_nseventsdir}/%{name}-update
 
 %changelog
+* Wed Mar 02 2022 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.4-1
+- get-oui and get-iab cron job doesn't fetch updates - Bug NethServer/dev#6642
+
 * Thu Nov 08 2018 Giacomo Sanchietti <giacomo.sanchietti@nethesis.it> - 1.0.3-1
 - Quiet the get-oui and get-iab cron job - NethServer/dev#5617
 
