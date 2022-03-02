@@ -9,7 +9,7 @@ URL: %{url_prefix}/%{name}
 BuildRequires: nethserver-devtools
 Requires: arp-scan
 Requires: speedtest-cli
-#AutoReq: no
+Requires: perl-LWP-Protocol-https
 
 %description
 NethServer diagnostic tool
